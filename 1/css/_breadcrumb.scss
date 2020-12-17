@@ -1,0 +1,44 @@
+.breadcrumb-wrapper {
+  height: 148px;
+  background-color: #f8f3f4;
+}
+
+.breadcrumb {
+  height: 148px;
+  background-color: #f8f3f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.breadcrumb h1 {
+  font-size: 24px;
+  line-height: 20px;
+  font-weight: 900;
+  color: $redColor;
+}
+
+.breadcrumb nav a {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+  color: #636363;
+  text-decoration: none;
+}
+
+.breadcrumb nav a:last-child {
+  font-weight: 700;
+  color: $redColor;
+}
+
+@include media-breakpoint-down(sm) {
+  .breadcrumb {
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+      margin-bottom: 25px;
+    }
+  }
+}

@@ -14,11 +14,18 @@ const products = [
 // Ответ: Передаём и принимаем объект
 
 const renderProduct = (product) => {
-    return `<div class="product-item">
-                <h3>${product.title}</h3>
-                <p>${product.price}</p>
-                <button class="buy-btn">Купить</button>
-            </div>`
+    return `<div class="product-item col mb-5 d-flex justify-content-center">
+                <div class="card border-0 h-100">
+                <!--
+                    <img src="images/index/cards/1.jpg" class="card-img-top" alt="Mango People T-shirt">
+                -->
+                    <div class="card-body">
+                        <h5 class="card-title">${product.title}</h5>
+                        <p class="card-text card__price">${product.price}</p>
+                        <button class="buy-btn">Купить</button>
+                    </div>
+                </div>
+            </div>`;
 };
 
 // 3. *Сейчас после каждого товара на странице выводится запятая.
