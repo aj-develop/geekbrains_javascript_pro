@@ -12,7 +12,7 @@ class Param {
 class Cart {
     /**
      * constructor
-     * @param container
+     * @param {string} container
      */
     constructor(container = '.cartTableBody') {
         this.container = container;
@@ -23,7 +23,7 @@ class Cart {
     }
 
     /**
-     *
+     * Функция присваивает атрибутам класса данные с сервера
      * @private
      */
     _fetchCartItems() {
@@ -57,9 +57,7 @@ class Cart {
         for (let i = 0; i < this.cartItems.length; i++) {
             if (this.cartItems[i].id_product === item.id_product) {
                 this.cartItems[i].quantity += 1;
-            } else {
-                //@todo draw new <tr>
-            }
+            } //@todo Переделать: учитывать то, что товара может и не быть в корзине
         }
         this.render();
     }
@@ -74,8 +72,7 @@ class Cart {
                 if (this.cartItems[i].quantity > 1) {
                     this.cartItems[i].quantity -= 1;
                 } else {
-                    //@todo remove <tr>
-                    //delbtn->parent <tr>
+                    //@todo Удалить строку в таблице
                 }
             }
         }
@@ -112,27 +109,23 @@ class Cart {
         }
     }
 
+    /**
+     * Функция обрабатывать клик по иконке удаления товара
+     * @param {Event} event
+     */
     handleDeleteClick(event) {
         let data = event.currentTarget;
         let deleteItem = new Param(data);
         this.deleteItem(deleteItem);
     }
-
-    /**
-     * calculate total price of all cart items
-     * @returns {int} total price
-     */
-    getTotalPrice() {
-        let total = 0;
-        this.goods.forEach(function (item) {
-            total += item.price;
-        });
-
-        return total;
-    }
 }
 
 class CartItem {
+    /**
+     * constructor
+     * @param item
+     * @param img
+     */
     constructor(item, img = 'http://via.placeholder.com/40x40.jpg') {
         this.title = item.product_name;
         this.price = item.price;
@@ -162,6 +155,10 @@ class CartItem {
 }
 
 class ProductsList {
+    /**
+     * constructor
+     * @param {string} container
+     */
     constructor(container = '.products') {
         this.container = container;
         this.goods = [];//массив товаров
@@ -169,6 +166,10 @@ class ProductsList {
         this.cart = new Cart();
     }
 
+    /**
+     * fetch products
+     * @private
+     */
     _fetchProducts() {
         this._getProducts()
             .then(data => {
@@ -177,6 +178,11 @@ class ProductsList {
             });
     }
 
+    /**
+     * get products
+     * @returns {Promise<any | void>}
+     * @private
+     */
     _getProducts() {
         return fetch(`${API}/catalogData.json`)
             .then(result => result.json())
@@ -185,6 +191,9 @@ class ProductsList {
             })
     }
 
+    /**
+     * render
+     */
     render() {
         const block = document.querySelector(this.container);
         for (let product of this.goods) {
@@ -199,6 +208,10 @@ class ProductsList {
 
     }
 
+    /**
+     * Функция обрабатывать клик по кнопке покупки товара
+     * @param {Event} event
+     */
     handleBuyBtnClick(event) {
         let dataDiv = event.currentTarget.closest('div.product-item');
         let buyCartItem = new Param(dataDiv);
@@ -207,6 +220,11 @@ class ProductsList {
 }
 
 class ProductItem {
+    /**
+     * constructor
+     * @param product
+     * @param {images} img
+     */
     constructor(product, img = 'http://via.placeholder.com/260x280.jpg') {
         this.title = product.product_name;
         this.price = product.price;
@@ -214,6 +232,10 @@ class ProductItem {
         this.img = img;
     }
 
+    /**
+     * render
+     * @returns {string}
+     */
     render() {
         return `<div class="product-item col mb-5 d-flex justify-content-center" 
                     data-price="${this.price}" data-id="${this.id}" data-title="${this.title}">
