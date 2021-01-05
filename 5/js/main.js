@@ -3,14 +3,18 @@ const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-a
 const app = new Vue({
     el: '#app',
     data: {
+        // catalog
         catalogUrl: '/catalogData.json',
+        imgCatalog: 'https://placehold.it/200x150',
         products: [],
         filteredProducts: [],
-        imgCatalog: 'https://placehold.it/200x150',
-
+        // cart
+        cartUrl: '/getBasket.json',
+        imgCart: 'https://placehold.it/50x100',
+        isVisibleCart: false,
+        goods: [],
+        // search
         userSearch: '',
-
-
     },
     methods: {
         getJson(url) {
@@ -20,8 +24,29 @@ const app = new Vue({
                     console.log(error);
                 })
         },
-        addProduct(product) {
-            console.log(product.id_product);
+        addProduct(productIn) {
+            let findInCart = this.goods.find(product => product.id_product === productIn.id_product);
+            if (findInCart) {
+                let indexOfFind = this.goods.findIndex(product => product.id_product === productIn.id_product);
+                findInCart.quantity++;
+                Vue.set(this.goods, indexOfFind, findInCart);
+            } else {
+                let newCartItem = this.products.find(product => product.id_product === productIn.id_product);
+                if (newCartItem) {
+                    newCartItem.quantity = 1;
+                    this.goods.push(newCartItem);
+                }
+            }
+        },
+        removeProduct(productIn) {
+            let findInCart = this.goods.find(product => product.id_product === productIn.id_product);
+            let indexOfFind = this.goods.findIndex(product => product.id_product === productIn.id_product);
+            if (findInCart.quantity > 1) {
+                findInCart.quantity--;
+                Vue.set(this.goods, indexOfFind, findInCart);
+            } else {
+                this.goods.splice(indexOfFind, 1);
+            }
         },
         filterGoods() {
             console.log(this.userSearch);
@@ -35,6 +60,9 @@ const app = new Vue({
                     block.classList.remove('invisible');
                 }
             })
+        },
+        cartVisibility() {
+            document.querySelector('div.cart-block').classList.toggle('invisible');
         }
     },
     mounted() {
@@ -45,13 +73,12 @@ const app = new Vue({
                 }
                 this.filteredProducts = this.products;
             });
-        this.getJson(`getProducts.json`)
+        this.getJson(`${API + this.cartUrl}`)
             .then(data => {
-                for (let el of data) {
-                    this.products.push(el);
+                for (let el of data.contents) {
+                    this.goods.push(el);
                 }
-                this.filteredProducts = this.products;
-            })
+            });
     }
 })
 
