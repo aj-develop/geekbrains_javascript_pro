@@ -61,9 +61,6 @@ const app = new Vue({
                 }
             })
         },
-        cartVisibility() {
-            document.querySelector('div.cart-block').classList.toggle('invisible');
-        }
     },
     mounted() {
         this.getJson(`${API + this.catalogUrl}`)
