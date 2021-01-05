@@ -29,7 +29,7 @@ const app = new Vue({
             if (findInCart) {
                 let indexOfFind = this.goods.findIndex(product => product.id_product === productIn.id_product);
                 findInCart.quantity++;
-                Vue.set(this.goods, indexOfFind, findInCart);
+                this.goods.splice(indexOfFind, 1, findInCart);
             } else {
                 let newCartItem = this.products.find(product => product.id_product === productIn.id_product);
                 if (newCartItem) {
@@ -43,7 +43,7 @@ const app = new Vue({
             let indexOfFind = this.goods.findIndex(product => product.id_product === productIn.id_product);
             if (findInCart.quantity > 1) {
                 findInCart.quantity--;
-                Vue.set(this.goods, indexOfFind, findInCart);
+                this.goods.splice(indexOfFind, 1, findInCart);
             } else {
                 this.goods.splice(indexOfFind, 1);
             }
