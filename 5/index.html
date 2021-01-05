@@ -19,6 +19,7 @@
             </form>
             <button class="btn-cart" type="button" v-on:click="cartVisibility">Корзина</button>
             <div class="cart-block invisible">
+                <p v-if="goods.length == 0">Корзина пуста</p>
                 <div v-for="good of goods" class="cart-item" :key="good.id_product" :data-id="good.id_product">
                     <div class="product-bio">
                         <img :src="imgCart" :alt="good.product_name">
@@ -38,6 +39,7 @@
     </header>
     <main>
         <div class="products">
+            <h2 v-if="products.length == 0">Нет данных</h2>
             <div class="product-item" v-for="product of products" :key="product.id_product"
                  :data-id="product.id_product">
                 <img :src="imgCatalog" alt="Some img">
