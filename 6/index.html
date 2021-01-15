@@ -27,6 +27,7 @@
         </div>
     </header>
     <main>
+        <alert-box :message="alertBoxMessage" :visibility="showAlertBox"></alert-box>
         <products :products="filtered" :img="imgProduct" @add-product="addProduct"></products>
     </main>
 </div>
@@ -34,6 +35,7 @@
         integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/AlertBoxComponent.js"></script>
 <script src="js/SearchFormComponent.js"></script>
 <script src="js/ProductComponent.js"></script>
 <script src="js/CartComponent.js"></script>
