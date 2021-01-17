@@ -18,10 +18,10 @@
         },
         {
             "quantity": 1,
-            "id_product": 503,
-            "product_name": "OLYMP Jacke",
-            "price": 199,
-            "image": "images/product/items/8.jpg"
+            "id_product": 501,
+            "product_name": "OLYMP Weste",
+            "price": 69,
+            "image": "images/product/items/6.jpg"
         }
     ]
 }
