@@ -3,28 +3,32 @@
     "countGoods": 2,
     "contents": [
         {
-            "id_product": 123,
-            "product_name": "Ноутбук",
-            "price": 45600,
-            "quantity": 7
-        },
-        {
-            "id_product": 456,
-            "product_name": "Мышка",
-            "price": 1000,
-            "quantity": 2
-        },
-        {
-            "quantity": 8,
+            "quantity": 1,
             "id_product": 457,
-            "product_name": "Gamepad",
-            "price": 3000
+            "product_name": "OLYMP Mantel braun",
+            "price": 149,
+            "image": "images/product/items/2.jpg"
         },
         {
-            "quantity": 9,
+            "quantity": 4,
+            "id_product": 123,
+            "product_name": "OLYMP Jacke blau",
+            "price": 89,
+            "image": "images/product/items/3.jpg"
+        },
+        {
+            "quantity": 2,
             "id_product": 124,
-            "product_name": "Keyboard",
-            "price": 1600
+            "product_name": "OLYMP Mantel schwarz",
+            "price": 119,
+            "image": "images/product/items/1.jpg"
+        },
+        {
+            "quantity": 1,
+            "id_product": 504,
+            "product_name": "OLYMP T-Shirt",
+            "price": 29,
+            "image": "images/product/items/9.jpg"
         }
     ]
 }
