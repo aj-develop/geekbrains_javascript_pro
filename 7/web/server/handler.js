@@ -4,7 +4,7 @@ const fs = require('fs');
 const actions = {
     add: cart.add,
     change: cart.change,
-    deleteAction: cart.deleteAction
+    remove: cart.remove
 };
 
 let handler = (req, res, action, file) => {

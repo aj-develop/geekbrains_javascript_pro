@@ -18,7 +18,7 @@ let change = (cart, req) => {
     return JSON.stringify(cart, null, 4);
 };
 
-let deleteAction = (cart, req) => {
+let remove = (cart, req) => {
     let find = cart.contents.find(el => el.id_product === +req.params.id);
     cart.contents.splice(cart.contents.indexOf(find), 1);
     writeStats('удалено', find);
@@ -49,5 +49,5 @@ let writeStats = (action, cartItem) => {
 module.exports = {
     add,
     change,
-    deleteAction
+    remove
 };
