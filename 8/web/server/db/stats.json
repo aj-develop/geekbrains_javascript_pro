@@ -1,0 +1,80 @@
+[
+    {
+        "date": "2021-01-18T10:35:10+01:00",
+        "action": "уменьшено",
+        "id_product": "124",
+        "product_name": "OLYMP Mantel schwarz"
+    },
+    {
+        "date": "2021-01-18T10:35:24+01:00",
+        "action": "удалено",
+        "id_product": "501",
+        "product_name": "OLYMP Weste"
+    },
+    {
+        "date": "2021-01-18T10:35:34+01:00",
+        "action": "увеличено",
+        "id_product": "500",
+        "product_name": "OLYMP Pullover"
+    },
+    {
+        "date": "2021-01-18T10:35:39+01:00",
+        "action": "добавлено",
+        "id_product": "123",
+        "product_name": "OLYMP Jacke blau"
+    },
+    {
+        "date": "2021-01-18T19:21:40+01:00",
+        "action": "уменьшено",
+        "id_product": "500",
+        "product_name": "OLYMP Pullover"
+    },
+    {
+        "date": "2021-01-18T19:21:44+01:00",
+        "action": "добавлено",
+        "id_product": "456",
+        "product_name": "OLYMP Hose braun"
+    },
+    {
+        "date": "2021-01-18T19:21:49+01:00",
+        "action": "удалено",
+        "id_product": "123",
+        "product_name": "OLYMP Jacke blau"
+    },
+    {
+        "date": "2021-01-24T19:05:39+01:00",
+        "action": "уменьшено",
+        "id_product": "124",
+        "product_name": "OLYMP Mantel schwarz"
+    },
+    {
+        "date": "2021-01-24T19:05:50+01:00",
+        "action": "удалено",
+        "id_product": "124",
+        "product_name": "OLYMP Mantel schwarz"
+    },
+    {
+        "date": "2021-01-24T19:05:54+01:00",
+        "action": "удалено",
+        "id_product": "456",
+        "product_name": "OLYMP Hose braun"
+    },
+    {
+        "date": "2021-01-24T19:05:58+01:00",
+        "action": "увеличено",
+        "id_product": "500",
+        "product_name": "OLYMP Pullover"
+    },
+    {
+        "date": "2021-01-24T19:06:02+01:00",
+        "action": "добавлено",
+        "id_product": "457",
+        "product_name": "OLYMP Mantel braun"
+    },
+    {
+        "date": "2021-01-24T19:06:23+01:00",
+        "action": "добавлено",
+        "id_product": "123",
+        "product_name": "OLYMP Jacke blau"
+    }
+]

@@ -1,0 +1,27 @@
+@import "bootstrap/scss/bootstrap";
+@import "variables";
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.wrapper {
+  min-height: 100vh;
+}
+
+@import "header";
+@import "top-nav";
+@import "breadcrumb";
+@import "footer";
+@import "copyright";
+@import "subscribe";
+@import "container_index";
+@import "container_checkout";
+@import "container_shopping-cart";
+@import "container_product";
+@import "container_single-page";

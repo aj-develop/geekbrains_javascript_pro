@@ -1,0 +1,35 @@
+.top-nav {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-nav a:not(:last-child) {
+  margin-right: 45px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #222222;
+  border-bottom: 1px solid transparent;
+}
+
+.top-nav a:hover {
+  color: $redColor;
+  border-bottom: 1px solid $redColor;
+}
+
+@include media-breakpoint-down(md) {
+  .top-nav {
+    flex-direction: column;
+    height: auto;
+
+    a:not(:last-child) {
+      margin-right: 0;
+    }
+  }
+}
